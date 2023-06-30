@@ -1,5 +1,8 @@
 import discord
 import responses
+import os
+key = 'TOKEN'
+
 
 
 async def send_message(message, user_message, is_private):
@@ -38,4 +41,4 @@ def run_discord_bot():
         else:
             await send_message(message, user_message, is_private=False)
 
-    client.run(TOKEN)
+    client.run(os.getenv(key))
